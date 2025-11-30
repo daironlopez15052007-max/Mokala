@@ -1,0 +1,389 @@
+/* Paretros Generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Momo Trust Display", sans-serif;
+  font-style: normal;
+}
+
+/* Body */
+body {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: var(--color-fondo);
+  height: 100vh;
+}
+
+
+/* Colores */
+:root {
+  --color-fondo: #fff;
+  --color-letras: #d18a34;
+  --color-N-claro: #ff9d00;
+  --color-Gry-oscuro: #363636;
+  --color-Gry-claro: slategray;
+}
+
+
+/* Header */
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  padding: 20px;
+  padding-top: 30px;
+  background-color: var(--color-fondo);
+}
+
+/* MENU AMBURGUESA OCULTO EN PANTALLA GRANDE */
+.header button, #btn-nav-close {
+  display: none;
+}
+/*header --logo*/
+.header #logo {
+  width: 800px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 50px;
+}
+
+/* header --nav */
+.nav-list li {
+  list-style: none;
+  font-size: 2rem;
+  color: slategrey;
+  transition: 0.3s;
+}
+.nav-list li:hover {
+  color: coral;
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+
+
+
+/* HR */
+.hr {
+  border: none;
+  width: 90%;
+  height: 10px;
+  background-color: var(--color-letras);
+  margin: 50px auto;
+  border-radius: 5px;
+}
+
+
+/* Barra De Busqueda */
+.buscar {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-content: center;
+}.buscar input {
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  font-size: 1.5rem;
+}
+.buscar input:focus {
+  box-shadow: 0 0 10px var(--color-letras);
+}
+
+/* Title Bar... */
+.buscar h2 {
+  color: var(--color-letras);
+  font-size: 1.7rem;
+  font-weight: 900;
+}.buscar h2 span {
+  font-weight: 300;
+}
+
+/* Class De JS PARA ABRIR NAV */
+.nav.flex{display:flex}
+
+
+/* Medida Para Moviles */
+@media(max-width: 500px){
+  .nav-list {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #btn-nav-close {
+    display: flex;
+    color: red;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    right: 1px;
+    top: 2px;
+    background-color: black;
+    width: 250px;
+    height: 600px;
+    padding: 30px;
+    padding-top: 50px;
+    z-index: 100;
+  }
+  .header {
+    height: 200px;
+    position: relative;
+  }
+  .header #logo {
+    position: absolute;
+    width: 400px;
+    top: 50px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  /* Boton De Menu Amburguesa */
+  .header button {
+    display: flex;
+    background: transparent;
+    border: none;
+    position: absolute;
+    font-size: 2.5rem;
+    top: 20px;
+    right: 40px;
+  }
+
+  main {
+    margin: 0;
+    padding: 20px 5px 10px 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3rem;
+  }
+  .view-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }.view-product .view-img {
+      width: 400px;
+    }.view-img img {
+      width: 100%;
+    }
+    .view .view-product .view-card{
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+/* Productos */
+/* MAIN O CONTENEDOR DE LOS PRODUCTOS */
+main {
+  display: grid;
+  gap: 2rem;
+  padding: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+/* Card de productos */
+.card-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid var(--color-letras);
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+/* Imagen del Producto */
+.card-img-product {
+  position: relative;
+  aspect-ratio: -5 / -5;
+  overflow: hidden;
+  margin: 30px auto;
+  border-radius: 5px;
+}
+    /* IMG */
+    .card-img-product img {
+      object-fit: cover;
+      width: 97%;
+      height: 97%;
+    }
+
+/* Informacion del Producto */
+.card-info-product {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background-color: var(--color-letras);
+  border-radius: 8px;
+  color: slategray;
+  padding: 20px;
+  width: 100%;
+}
+.card-info-product h3 {
+  color: black;
+  font-size: 2rem;
+  font-weight: 900;
+}.card-info-product small{
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 650;
+  margin-left: 50%;
+}small span {
+  color: red;
+  font-weight: 720;
+}.card-info-product p {
+  color: #d1d1d1;
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Select */
+.view-info-select select {
+  width: 150px;
+  text-align: center;
+  border-radius: 0;
+  border: 2px solid goldenrod;
+  background-color: var(--color-N-claro);
+}
+
+/* Iconos de Redes Sociales */
+.redes {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}.card-redes {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin: 10px auto;
+}.view-card .redes h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-Gry-oscuro);
+}.view-card .redes .card-redes i {
+  color: var(--color-Gry-claro);
+  font-size: 2rem;
+  transition: 0.4s;
+}.view-card .redes .card-redes i:hover {
+  font-size: 2.3rem;
+  color: var(--color-N-claro);
+}
+#cash {
+  width: 60%;
+  border: none;
+  background-color: var(--color-letras);
+  color: #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 0;
+  transition: 0.4s;
+}#cash:hover {
+  color: black;
+  font-size: 2.1rem;
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--color-letras);
+}
+
+/* Visor de Productos */
+.view h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-N-claro);
+  font-size: 3rem;
+  padding: 20px;
+  
+  font-weight: 500;
+}
+.view {
+  width: 100%;
+}
+.view-product {
+  width: 100%;
+  display: flex;
+  margin: 10px auto;
+  display: flex;
+}
+.view-img {
+  width: 40%;
+}
+.view-img img {
+  width: 100%;
+  object-fit: contain;
+}
+.view-card {
+  width: 60%;
+}
+.view-info {
+  width: 100%;
+  display: block;
+  gap: 1.3rem;
+  margin: 15px auto;
+  justify-content: center;
+  align-items: center;
+}
+.view h3 {
+  font-size: 2.2rem;
+  color: red;
+  font-weight: 700;
+}
+.hr-view {
+  width: 100%;
+  height: 2px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-N-claro);
+}
+.view-info-select {
+  display: flex;
+  flex-direction: column;
+}.vs {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+  font-size: 1rem;
+}.vs label {
+  font-size: 1.5rem;
+  font-weight: 800;
+}.view-data {
+  width: 100%;
+  display: block;
+  gap: 1.3rem;
+  margin: 15px auto;
+  justify-content: center;
+  align-items: center;
+}.view-data h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 900;
+  font-size: 1.7rem;
+  color: var(--color-Gry-oscuro);
+}.view-data p {
+  width: 90%;
+  margin-left: 20px;
+  font-weight: 500;
+  color: var(--color-Gry-claro);
+}
